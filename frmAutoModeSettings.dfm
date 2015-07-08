@@ -1,0 +1,436 @@
+object AutoModeSettingsForm: TAutoModeSettingsForm
+  Left = 192
+  Top = 108
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Ustawienia trybu automatycznego'
+  ClientHeight = 516
+  ClientWidth = 340
+  Color = clBtnFace
+  Font.Charset = EASTEUROPE_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 324
+    Height = 28
+    AutoSize = False
+    Caption = 
+      'Wybierz parametry pracy programu w trybie automatycznym. Nast'#281'pn' +
+      'ie kliknij na Uruchom, aby przej'#347#263' do tego trybu pracy.'
+    WordWrap = True
+  end
+  object gbStartPosition: TGroupBox
+    Left = 8
+    Top = 40
+    Width = 324
+    Height = 76
+    Caption = ' Utw'#243'r pocz'#261'tkowy '
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 8
+      Top = 20
+      Width = 244
+      Height = 13
+      Caption = 'Numer utworu, od kt'#243'rego rozpocz'#261#263' odtwarzanie:'
+    end
+    object rvspStartPosition: TSpinEdit
+      Left = 266
+      Top = 16
+      Width = 49
+      Height = 22
+      Hint = 
+        'Utw'#243'rz pocz'#261'tkowy#Okre'#347'l numer utworu, od kt'#243'rego nale'#380'y rozpocz' +
+        #261#263' odtwarzanie w trybie automatycznym'
+      AutoSelect = False
+      AutoSize = False
+      EditorEnabled = False
+      MaxLength = 4
+      MaxValue = 1000
+      MinValue = 1
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Value = 1
+    end
+    object btnFirstSong: TButton
+      Left = 8
+      Top = 44
+      Width = 100
+      Height = 25
+      Hint = 
+        'Pierwszy utw'#243'r#Kliknij, aby wybra'#263' pierwsz'#261' pozycj'#281' na li'#347'cie ut' +
+        'w'#243'r'#243'w w oknie g'#322#243'wnym'
+      Caption = 'Pierwszy utw'#243'r'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      OnClick = btnFirstSongClick
+    end
+    object btnActualSong: TButton
+      Left = 112
+      Top = 44
+      Width = 100
+      Height = 25
+      Hint = 
+        'Aktualny utw'#243'r#Kliknij, aby wybra'#263' aktualn'#261' pozycj'#281' na li'#347'cie ut' +
+        'w'#243'r'#243'w w oknie g'#322#243'wnym'
+      Caption = 'Aktualny utw'#243'r'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      OnClick = btnActualSongClick
+    end
+    object btnRandomSong: TButton
+      Left = 216
+      Top = 44
+      Width = 100
+      Height = 25
+      Hint = 
+        'Losowy utw'#243'r#Kliknij, aby wybra'#263' losow'#261' pozycj'#281' na li'#347'cie utw'#243'r'#243 +
+        'w w oknie g'#322#243'wnym'
+      Caption = 'Losowy utw'#243'r'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      OnClick = btnRandomSongClick
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 8
+    Top = 480
+    Width = 100
+    Height = 30
+    Caption = 'Uruchom'
+    Default = True
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ModalResult = 6
+    ParentFont = False
+    TabOrder = 4
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C006000000000000000000000000000000000000D8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECFFFFFFFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000000000D8E9ECFFFFFFD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000009898009898
+      000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00000000
+      A0A000D0D000C8C8009898000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      EC00000000A0A000D8D800D0D000D0D000C8C8009898000000D8E9ECFFFFFFD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9EC00000000A8A800D8D800D8D800D8D800D0D000D0D000C8C80098
+      98000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9EC00000000A8A800E0E000E0E000E0E000C0C000B8B8
+      00D0D000D0D000C8C8009898000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00000000909000E8E800E8E800E0E000
+      A8A800000000000000A0A000D0D000D0D000C8C8009898000000D8E9ECFFFFFF
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00000000B0
+      B000E8E800A8A8000000D8E9ECD8E9EC00000000A0A000D0D000D0D000C8C800
+      9898000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9EC000000009090000000D8E9ECD8E9ECD8E9ECD8E9EC00000000A0
+      A000D0D000D0D000C8C8009898000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9EC00000000A0A000D0D000D0D000C8C8009898000000D8E9ECFFFF
+      FFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00000000A0A000D0D000D0D000C8C8
+      009898000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00000000
+      A0A000D0D000D0D000C8C8009898000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9EC00000000A0A000D0D000D0D000C8C8007878000000D8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00000000A0A000D0D00098980000
+      00D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000
+      008080000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC}
+  end
+  object BitBtn2: TBitBtn
+    Left = 235
+    Top = 480
+    Width = 100
+    Height = 30
+    Cancel = True
+    Caption = 'Anuluj'
+    ModalResult = 2
+    TabOrder = 5
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C006000000000000000000000000000000000000D8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECFFFFFFD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECFFFFFFD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000D8E9ECFF
+      FFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC0000
+      00707000000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9EC000000505000000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9EC000000909000B8B800888800000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9EC000000606000808000606000000000D8E9ECFFFFFFD8
+      E9ECD8E9ECD8E9EC000000787800C0C000C0C000B8B800888800000000D8E9EC
+      FFFFFFD8E9ECD8E9ECD8E9ECD8E9EC0000006868008888008080008080005050
+      00000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000909000C0C000C0C000B8
+      B800888800000000D8E9ECFFFFFFD8E9ECD8E9EC000000707000909000888800
+      888800606000000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC0000
+      00909000C0C000C0C000B8B800888800000000D8E9ECFFFFFF00000070700098
+      9800909000909000686800000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9EC000000909000C0C000C0C000B8B8008888000000000000
+      00787800A0A000989800989800707000000000D8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000909000C0C000C0C000
+      B8B800A0A000989800A8A800A8A800A0A000787800000000D8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC00
+      0000909000C0C000C0C000B8B800B8B800B0B000A8A800808000000000D8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9EC000000B0B000C0C000C0C000B8B800B8B80098980000
+      0000FFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000B0B000C8C800C0C000C0C0
+      00B8B800A0A000000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000A0A000D0D000
+      D0D000C8C800C0C000C0C000B8B800888800000000D8E9ECFFFFFFD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000A8
+      A800D8D800D8D800D0D000B0B000B0B000C0C000C0C000B8B800888800000000
+      D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      EC000000B0B000E8E800E0E000E0E000A0A000000000000000989800C0C000C0
+      C000B8B800888800000000D8E9ECFFFFFFD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9EC000000B8B800F0F000E8E800E8E800A8A800000000D8E9ECD8E9
+      EC000000989800C8C800C0C000B8B800888800000000D8E9ECFFFFFFD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9EC000000B8B800FFFF00F0F000F0F000B0B000000000
+      D8E9ECD8E9ECD8E9ECD8E9EC000000989800C8C800C0C000B8B8008888000000
+      00D8E9ECFFFFFFD8E9ECD8E9ECD8E9EC000000989800FFFF00FFFF00FFFF00B8
+      B800000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000989800C8C800
+      C0C000B8B800707000000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000B8B8
+      00FFFF00B8B800000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9EC000000989800C8C800909000000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9EC000000989800000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9EC000000808000000000D8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC000000D8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+      D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9
+      ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8
+      E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC}
+  end
+  object gbSongs: TGroupBox
+    Left = 8
+    Top = 120
+    Width = 324
+    Height = 161
+    Caption = ' Wy'#347'wietlanie informacji o utworach '
+    TabOrder = 1
+    object Label3: TLabel
+      Left = 8
+      Top = 112
+      Width = 308
+      Height = 41
+      AutoSize = False
+      Caption = 
+        'Efekty Fade In i Fade Out daj'#261' bardziej efektowne przej'#347'cia podc' +
+        'zas pracy wygaszacza ekranu, ale wymagaj'#261' szybszego procesora i ' +
+        'wi'#281'cej pami'#281'ci.'
+      WordWrap = True
+    end
+    object chbShowCurrent: TCheckBox
+      Left = 8
+      Top = 16
+      Width = 209
+      Height = 17
+      Hint = 
+        'Aktualny utw'#243'r#Zaznacz, je'#347'li chcesz aby informacja o aktualnie ' +
+        'odtwarzanym utworze by'#322'a wy'#347'wietlana na wygaszaczu ekranu'
+      Caption = 'Wy'#347'wietlaj akutalnie odtwarzany utw'#243'r'
+      Checked = True
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 0
+    end
+    object chbShowNext: TCheckBox
+      Left = 8
+      Top = 32
+      Width = 153
+      Height = 17
+      Hint = 
+        'Nast'#281'pny utw'#243'r#Zaznacz, je'#347'li chcesz aby informacja o nast'#281'pnym ' +
+        'w kolejno'#347'ci utworze by'#322'a wy'#347'wietlana na wygaszaczu ekranu'
+      Caption = 'Wy'#347'wietlaj nast'#281'pny utw'#243'r'
+      Checked = True
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object rgPassThrough: TRadioGroup
+      Left = 8
+      Top = 56
+      Width = 308
+      Height = 49
+      Hint = 'Efekt przej'#347'cia#Wybierz efekt przej'#347'cia podczas zmiany utwor'#243'w'
+      Caption = ' Efekt przej'#347'cia '
+      ItemIndex = 0
+      Items.Strings = (
+        'U'#380'yj p'#322'ynnego przej'#347'cia (efekty Fade In && Fade Out)'
+        'Wy'#322#261'cz p'#322'ynne przej'#347'cie napis'#243'w')
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+  end
+  object gbClocks: TGroupBox
+    Left = 8
+    Top = 288
+    Width = 324
+    Height = 161
+    Caption = ' Wy'#347'wietlanie zegar'#243'w '
+    TabOrder = 2
+    object chbShowPartyClock: TCheckBox
+      Left = 8
+      Top = 16
+      Width = 178
+      Height = 17
+      Hint = 
+        'Czas trwania#Zaznacz, je'#347'li chcesz aby zegar czasu trwania impre' +
+        'zy by'#322' wy'#347'wietlany na wygaszaczu ekranu'
+      Caption = 'Wy'#347'wietlaj czas trwania imprezy'
+      Checked = True
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 0
+    end
+    object chbShowMidnightClock: TCheckBox
+      Left = 8
+      Top = 32
+      Width = 153
+      Height = 17
+      Hint = 
+        'Czas rzeczywisty#Zaznacz, je'#347'li chcesz aby zegar czasu rzeczywis' +
+        'tego by'#322' wy'#347'wietlany na wygaszaczu ekranu'
+      Caption = 'Wy'#347'wietlaj czas rzeczywisty'
+      Checked = True
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object rgMidnightClockMode: TRadioGroup
+      Left = 8
+      Top = 103
+      Width = 178
+      Height = 50
+      Hint = 'Tryb odmierzania#Wybierz tryb pracy zegara rzeczywistego'
+      Caption = ' Zegar rzeczywisty - tryb pracy '
+      ItemIndex = 0
+      Items.Strings = (
+        'Zwyk'#322'a impreza'
+        'Impreza sylwestrowa')
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object gbColors: TGroupBox
+      Left = 192
+      Top = 12
+      Width = 124
+      Height = 141
+      Caption = ' Kolory wy'#347'wietlacza '
+      TabOrder = 3
+      object Label4: TLabel
+        Left = 8
+        Top = 56
+        Width = 43
+        Height = 13
+        Caption = 'Kolor tla:'
+      end
+      object Label5: TLabel
+        Left = 8
+        Top = 98
+        Width = 69
+        Height = 13
+        Caption = 'Kolor tekst'#243'w:'
+      end
+      object Label6: TLabel
+        Left = 8
+        Top = 16
+        Width = 85
+        Height = 13
+        Caption = 'Kolor nag'#322#243'wk'#243'w:'
+      end
+      object rccbTitles: TRogerColorComboBox
+        Left = 8
+        Top = 32
+        Width = 105
+        Height = 22
+        HTMLcolor = '#000000'
+        ColorValue = clBlack
+        TabOrder = 0
+      end
+      object rccbBackground: TRogerColorComboBox
+        Left = 8
+        Top = 72
+        Width = 105
+        Height = 22
+        HTMLcolor = '#000000'
+        ColorValue = clBlack
+        TabOrder = 1
+      end
+      object rccbTexts: TRogerColorComboBox
+        Left = 8
+        Top = 112
+        Width = 105
+        Height = 22
+        HTMLcolor = '#000000'
+        ColorValue = clBlack
+        TabOrder = 2
+      end
+    end
+  end
+  object chbRunSSAlso: TCheckBox
+    Left = 8
+    Top = 454
+    Width = 225
+    Height = 17
+    Hint = 
+      'Automatyczny wygaszacz#Zaznacz, je'#347'li chcesz aby wygaszacz ekran' +
+      'u zosta'#322' uruchomiony zaraz po wej'#347'ciu w tryb automatyczny'
+    Caption = 'Uruchom automatycznie wygaszacz ekranu'
+    Checked = True
+    ParentShowHint = False
+    ShowHint = True
+    State = cbChecked
+    TabOrder = 3
+  end
+end
