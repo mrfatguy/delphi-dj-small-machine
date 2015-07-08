@@ -3,7 +3,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
   Top = 108
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Ustawienia trybu automatycznego'
+  Caption = 'Auto-mode settings'
   ClientHeight = 516
   ClientWidth = 340
   Color = clBtnFace
@@ -24,8 +24,8 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Height = 28
     AutoSize = False
     Caption = 
-      'Wybierz parametry pracy programu w trybie automatycznym. Nast'#281'pn' +
-      'ie kliknij na Uruchom, aby przej'#347#263' do tego trybu pracy.'
+      'Set Auto-mode parameters and settings and then click on "Run" to star' +
+      't this mode.'
     WordWrap = True
   end
   object gbStartPosition: TGroupBox
@@ -33,23 +33,20 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Top = 40
     Width = 324
     Height = 76
-    Caption = ' Utw'#243'r pocz'#261'tkowy '
+    Caption = ' First song '
     TabOrder = 0
     object Label2: TLabel
       Left = 8
       Top = 20
       Width = 244
       Height = 13
-      Caption = 'Numer utworu, od kt'#243'rego rozpocz'#261#263' odtwarzanie:'
+      Caption = 'Number of song or file, from which auto-mode should start:'
     end
     object rvspStartPosition: TSpinEdit
       Left = 266
       Top = 16
       Width = 49
       Height = 22
-      Hint = 
-        'Utw'#243'rz pocz'#261'tkowy#Okre'#347'l numer utworu, od kt'#243'rego nale'#380'y rozpocz' +
-        #261#263' odtwarzanie w trybie automatycznym'
       AutoSelect = False
       AutoSize = False
       EditorEnabled = False
@@ -66,10 +63,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 44
       Width = 100
       Height = 25
-      Hint = 
-        'Pierwszy utw'#243'r#Kliknij, aby wybra'#263' pierwsz'#261' pozycj'#281' na li'#347'cie ut' +
-        'w'#243'r'#243'w w oknie g'#322#243'wnym'
-      Caption = 'Pierwszy utw'#243'r'
+      Caption = 'First song'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -80,10 +74,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 44
       Width = 100
       Height = 25
-      Hint = 
-        'Aktualny utw'#243'r#Kliknij, aby wybra'#263' aktualn'#261' pozycj'#281' na li'#347'cie ut' +
-        'w'#243'r'#243'w w oknie g'#322#243'wnym'
-      Caption = 'Aktualny utw'#243'r'
+      Caption = 'Current song'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -94,10 +85,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 44
       Width = 100
       Height = 25
-      Hint = 
-        'Losowy utw'#243'r#Kliknij, aby wybra'#263' losow'#261' pozycj'#281' na li'#347'cie utw'#243'r'#243 +
-        'w w oknie g'#322#243'wnym'
-      Caption = 'Losowy utw'#243'r'
+      Caption = 'Random song'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
@@ -109,7 +97,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Top = 480
     Width = 100
     Height = 30
-    Caption = 'Uruchom'
+    Caption = 'Run'
     Default = True
     Font.Charset = EASTEUROPE_CHARSET
     Font.Color = clWindowText
@@ -183,7 +171,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Width = 100
     Height = 30
     Cancel = True
-    Caption = 'Anuluj'
+    Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 5
     Glyph.Data = {
@@ -249,7 +237,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Top = 120
     Width = 324
     Height = 161
-    Caption = ' Wy'#347'wietlanie informacji o utworach '
+    Caption = ' Songs information in Auto-mode '
     TabOrder = 1
     object Label3: TLabel
       Left = 8
@@ -258,9 +246,9 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Height = 41
       AutoSize = False
       Caption = 
-        'Efekty Fade In i Fade Out daj'#261' bardziej efektowne przej'#347'cia podc' +
-        'zas pracy wygaszacza ekranu, ale wymagaj'#261' szybszego procesora i ' +
-        'wi'#281'cej pami'#281'ci.'
+        'Fade-in and Fade-out effects produces an effective passage (song title cha' +
+        'nge) during auto-mode, but requires a better processor and more memor' +
+        'y.'
       WordWrap = True
     end
     object chbShowCurrent: TCheckBox
@@ -268,10 +256,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 16
       Width = 209
       Height = 17
-      Hint = 
-        'Aktualny utw'#243'r#Zaznacz, je'#347'li chcesz aby informacja o aktualnie ' +
-        'odtwarzanym utworze by'#322'a wy'#347'wietlana na wygaszaczu ekranu'
-      Caption = 'Wy'#347'wietlaj akutalnie odtwarzany utw'#243'r'
+      Caption = 'Display title of current song'
       Checked = True
       ParentShowHint = False
       ShowHint = True
@@ -283,10 +268,7 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 32
       Width = 153
       Height = 17
-      Hint = 
-        'Nast'#281'pny utw'#243'r#Zaznacz, je'#347'li chcesz aby informacja o nast'#281'pnym ' +
-        'w kolejno'#347'ci utworze by'#322'a wy'#347'wietlana na wygaszaczu ekranu'
-      Caption = 'Wy'#347'wietlaj nast'#281'pny utw'#243'r'
+      Caption = 'Display title of next song'
       Checked = True
       ParentShowHint = False
       ShowHint = True
@@ -298,12 +280,11 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 56
       Width = 308
       Height = 49
-      Hint = 'Efekt przej'#347'cia#Wybierz efekt przej'#347'cia podczas zmiany utwor'#243'w'
-      Caption = ' Efekt przej'#347'cia '
+      Caption = ' Fade effects '
       ItemIndex = 0
       Items.Strings = (
-        'U'#380'yj p'#322'ynnego przej'#347'cia (efekty Fade In && Fade Out)'
-        'Wy'#322#261'cz p'#322'ynne przej'#347'cie napis'#243'w')
+        'Use fade-in and fade-out effects when changing song title'
+        'Turn off fade effects for song title change')
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -314,17 +295,15 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Top = 288
     Width = 324
     Height = 161
-    Caption = ' Wy'#347'wietlanie zegar'#243'w '
+    Caption = ' Clocks '
     TabOrder = 2
     object chbShowPartyClock: TCheckBox
       Left = 8
       Top = 16
       Width = 178
       Height = 17
-      Hint = 
-        'Czas trwania#Zaznacz, je'#347'li chcesz aby zegar czasu trwania impre' +
-        'zy by'#322' wy'#347'wietlany na wygaszaczu ekranu'
-      Caption = 'Wy'#347'wietlaj czas trwania imprezy'
+      Hint = 'Check to display clock, that shows time since starting party'
+      Caption = 'Display party clock'
       Checked = True
       ParentShowHint = False
       ShowHint = True
@@ -336,10 +315,8 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 32
       Width = 153
       Height = 17
-      Hint = 
-        'Czas rzeczywisty#Zaznacz, je'#347'li chcesz aby zegar czasu rzeczywis' +
-        'tego by'#322' wy'#347'wietlany na wygaszaczu ekranu'
-      Caption = 'Wy'#347'wietlaj czas rzeczywisty'
+      Hint = 'Check to display clock, that shows current time'
+      Caption = 'Display current time clock'
       Checked = True
       ParentShowHint = False
       ShowHint = True
@@ -352,11 +329,11 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Width = 178
       Height = 50
       Hint = 'Tryb odmierzania#Wybierz tryb pracy zegara rzeczywistego'
-      Caption = ' Zegar rzeczywisty - tryb pracy '
+      Caption = ' Current time clock mode '
       ItemIndex = 0
       Items.Strings = (
-        'Zwyk'#322'a impreza'
-        'Impreza sylwestrowa')
+        'Typical party'
+        'New Year Eve party')
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -366,28 +343,28 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
       Top = 12
       Width = 124
       Height = 141
-      Caption = ' Kolory wy'#347'wietlacza '
+      Caption = ' Display colors '
       TabOrder = 3
       object Label4: TLabel
         Left = 8
         Top = 56
         Width = 43
         Height = 13
-        Caption = 'Kolor tla:'
+        Caption = 'Background color:'
       end
       object Label5: TLabel
         Left = 8
         Top = 98
         Width = 69
         Height = 13
-        Caption = 'Kolor tekst'#243'w:'
+        Caption = 'Text color:'
       end
       object Label6: TLabel
         Left = 8
         Top = 16
         Width = 85
         Height = 13
-        Caption = 'Kolor nag'#322#243'wk'#243'w:'
+        Caption = 'Title color:'
       end
       object rccbTitles: TRogerColorComboBox
         Left = 8
@@ -424,9 +401,9 @@ object AutoModeSettingsForm: TAutoModeSettingsForm
     Width = 225
     Height = 17
     Hint = 
-      'Automatyczny wygaszacz#Zaznacz, je'#347'li chcesz aby wygaszacz ekran' +
-      'u zosta'#322' uruchomiony zaraz po wej'#347'ciu w tryb automatyczny'
-    Caption = 'Uruchom automatycznie wygaszacz ekranu'
+      'Check if you want to start screen-saver automatically, once program g' +
+      'oes into Auto-mode or if you want to start screen-saver manually.'
+    Caption = 'Autostart screen-saver'
     Checked = True
     ParentShowHint = False
     ShowHint = True

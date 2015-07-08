@@ -3,7 +3,7 @@ object MarkerForm: TMarkerForm
   Top = 103
   BorderIcons = []
   BorderStyle = bsDialog
-  Caption = 'Punkt przejœcia'
+  Caption = 'Passage point'
   ClientHeight = 150
   ClientWidth = 332
   Color = clBtnFace
@@ -23,7 +23,7 @@ object MarkerForm: TMarkerForm
     Height = 13
     Alignment = taRightJustify
     AutoSize = False
-    Caption = 'Nowa wartoœæ:'
+    Caption = 'New value:'
   end
   object Label2: TLabel
     Left = 8
@@ -32,10 +32,10 @@ object MarkerForm: TMarkerForm
     Height = 53
     AutoSize = False
     Caption = 
-      'Okreœl "punkt przejœcia" - czyli miejsce (w sekun- dach, licz¹c ' +
-      'od koñca utworu), bo osi¹gniêciu któ- rego, rozpocznie siê autom' +
-      'atyczne odtwarzanie na- stêpnego utworu oraz wyciszanie obecnego' +
-      '.'
+      'Set "passage point", that is -- a point in song (in seconds, cou' +
+      'tnig back from the end), after reaching which next song will sta' +
+      'rt to play automatically and current song will be slowly silence' +
+      'd.'
     WordWrap = True
   end
   object eValue: TSpinEdit
@@ -55,14 +55,14 @@ object MarkerForm: TMarkerForm
     Top = 88
     Width = 230
     Height = 57
-    Caption = 'Zastosuj dla:'
+    Caption = 'Set for:'
     TabOrder = 1
     object rbSelected: TRadioButton
       Left = 8
       Top = 32
       Width = 113
       Height = 17
-      Caption = 'wybranej pozycji'
+      Caption = 'current song'
       TabOrder = 0
     end
     object rbAll: TRadioButton
@@ -70,7 +70,7 @@ object MarkerForm: TMarkerForm
       Top = 16
       Width = 217
       Height = 17
-      Caption = 'wszystkich utworów na liœcie'
+      Caption = 'all songs on the list'
       Checked = True
       TabOrder = 1
       TabStop = True
@@ -93,7 +93,7 @@ object MarkerForm: TMarkerForm
     Width = 75
     Height = 25
     Cancel = True
-    Caption = 'Anuluj'
+    Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 3
     OnClick = btnCancelClick

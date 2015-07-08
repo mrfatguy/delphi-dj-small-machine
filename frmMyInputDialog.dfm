@@ -2,7 +2,7 @@ object InputDialogForm: TInputDialogForm
   Left = 198
   Top = 103
   BorderStyle = bsDialog
-  Caption = 'Tytu³'
+  Caption = 'Title'
   ClientHeight = 100
   ClientWidth = 308
   Color = clBtnFace
@@ -22,7 +22,7 @@ object InputDialogForm: TInputDialogForm
     Width = 170
     Height = 57
     AutoSize = False
-    Caption = 'Treœæ'
+    Caption = 'Caption'
     WordWrap = True
   end
   object Image1: TImage
@@ -156,7 +156,7 @@ object InputDialogForm: TInputDialogForm
     Width = 75
     Height = 25
     Cancel = True
-    Caption = 'Anuluj'
+    Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 2
   end

@@ -90,8 +90,8 @@ begin
         mp3.Free;
         Files.Clear;
         for a:=0 to MainForm.ListView.Items.Count-1 do Files.Add(MainForm.ListView.Items[a].SubItems[2]);
-        MainForm.StatusBar.Panels[2].Text:='Utworów: '+IntToStr(b);
-        MainForm.StatusBar.Panels[3].Text:='Czas trwania: '+TimeToStr(tSummary);
+        MainForm.StatusBar.Panels[2].Text:='Songs: '+IntToStr(b);
+        MainForm.StatusBar.Panels[3].Text:='Time: '+TimeToStr(tSummary);
         Screen.Cursor:=0;        
 end;
 
@@ -105,12 +105,12 @@ var
         data: String;
         a: Integer;
 const
-        months_org :array[1..12] of String = ('styczeñ','luty','marzec','kwiecieñ','maj','czerwiec','lipiec','sierpieñ','wrzesieñ','paŸdziernik','listopad','grudzieñ');
-        months_my :array[1..12] of String = ('stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','wrzeœnia','paŸdziernika','listopada','grudnia');
+        months_org: array[1..12] of String = ('January','February','March','April','May','June','July','August','September','October','November','Deceber');
+        months_my: array[1..12] of String = ('January','February','March','April','May','June','July','August','September','October','November','Deceber'); //Not used in English
 begin
         data:=FormatDateTime('dddddd',Date);
         for a:=1 to 12 do data:=StringReplace(data,months_org[a],months_my[a],[rfReplaceAll]);
-        Result:=data+' r.';
+        Result:=data+''; //Not used in English
 end;
 
 procedure PlaySong(SongNumber: Integer; OnThePlayer, OldPlayer: TXAudioPlayer; WithFadeIn: Boolean);
@@ -119,7 +119,7 @@ var
 begin
         if SongNumber>MainForm.ListView.Items.Count-1 then
         begin
-                Application.MessageBox('Osi¹gniêto koniec listy!'+chr(13)+'Wygaszacz ekranu i tryb Auto zosta³y wy³¹czone.','Informacja...',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON1);
+                Application.MessageBox('End of list reached!'+chr(13)+'Screen saver and Auto-mode are turned off.','Information...',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON1);
                 AutoModeIsOn:=False;
                 MainForm.btnSaver.Enabled:=False;
                 MainForm.btnPlay.Enabled:=True;
@@ -135,10 +135,10 @@ begin
                 MainForm.btnRefreshList.Enabled:=True;
                 MainForm.ListView.Enabled:=True;
                 MainForm.btnAutoMode.Down:=False;
-                MainForm.btnAutoMode.Hint:='Wy³¹cz tryb Auto';
+                MainForm.btnAutoMode.Hint:='Turn off Auto-mode';
 
-                MainForm.StatusBar.Panels[0].Text:='Tryb automatyczny wy³¹czony.';
-                MainForm.StatusBar.Panels[1].Text:='Rêczny';
+                MainForm.StatusBar.Panels[0].Text:='Auto-mode turned off.';
+                MainForm.StatusBar.Panels[1].Text:='Manual';
                 TickCount:=0;
                 OldPlayer.Stop;
                 OldPlayer.InputClose;
@@ -158,7 +158,7 @@ begin
 
         if not FileExists(MainForm.ListView.Items[SongNumber].SubItems[2]) then
         begin
-                Application.MessageBox(PChar(MainForm.ListView.Items[SongNumber].SubItems[2]+chr(13)+'Plik nie zosta³ odnaleziony !!!'),'B³¹d!',MB_OK+MB_ICONERROR+MB_DEFBUTTON1);
+                Application.MessageBox(PChar(MainForm.ListView.Items[SongNumber].SubItems[2]+chr(13)+'File not found!'),'Error!',MB_OK+MB_ICONERROR+MB_DEFBUTTON1);
                 exit;
         end;
 
@@ -171,7 +171,7 @@ begin
 
         CurrentSong:=SongNumber;
 
-        MainForm.StatusBar.Panels[0].Text:='Odtwarzanie utworu: '+MainForm.ListView.Items[SongNumber].SubItems[0];
+        MainForm.StatusBar.Panels[0].Text:='Playing song: '+MainForm.ListView.Items[SongNumber].SubItems[0];
         TickCount:=-5;
 
         if WithFadeIn=True then
@@ -188,7 +188,7 @@ begin
         end;
 
         //FadeLabel([ScreenForm.lbl2,ScreenForm.lbl4],False);
-        MainForm.pnlVolText.Caption:='Granie...';
+        MainForm.pnlVolText.Caption:='Playing';
 end;
 
 procedure CrossFadeVolume(FadeInPlayer, FadeOutPlayer: TXAudioPlayer; DelayValue: Integer);
@@ -207,7 +207,7 @@ begin
                 FadeInPlayer.SetOutputVolume(XaudioPlayer.XA_OUTPUT_VOLUME_IGNORE_FIELD, vol, XaudioPlayer.XA_OUTPUT_VOLUME_IGNORE_FIELD);
                 FadeOutPlayer.SetOutputVolume(XaudioPlayer.XA_OUTPUT_VOLUME_IGNORE_FIELD, 100-vol, XaudioPlayer.XA_OUTPUT_VOLUME_IGNORE_FIELD);
                 Inc(blink);
-                if blink=5 then MainForm.pnlVolText.Caption:='Przejœcie!';
+                if blink=5 then MainForm.pnlVolText.Caption:='Passage!';
                 if blink=10 then
                 begin
                         MainForm.pnlVolText.Caption:='';
@@ -223,17 +223,17 @@ var
 begin
         TheMP3:=TMPEGAudio.Create;
         TheMP3.FileName:=Files.Strings[CurrentSong];
-        ScreenForm.lbl1.Caption:='Teraz gramy';
+        ScreenForm.lbl1.Caption:='Now playing';
         ScreenForm.lbl2.Caption:=RemoveAmpersand(TheMP3.Artist+chr(13)+'"'+TheMP3.Title+'"');
         if CurrentSong=MainForm.ListView.Items.Count-1 then
         begin
-                ScreenForm.lbl4.Caption:='Dalej nie ma ju¿ nic...';
-                ScreenForm.lbl3.Caption:='Nastêpny kawa³ek';
+                ScreenForm.lbl4.Caption:='Nothing left...';
+                ScreenForm.lbl3.Caption:='Next song';
         end
         else
         begin
                 TheMP3.FileName:=Files.Strings[CurrentSong+1];
-                ScreenForm.lbl3.Caption:='Nastêpny kawa³ek';
+                ScreenForm.lbl3.Caption:='Next song';
                 ScreenForm.lbl4.Caption:=RemoveAmpersand(TheMP3.Artist+chr(13)+'"'+TheMP3.Title+'"');
         end;
         TheMP3.Free;

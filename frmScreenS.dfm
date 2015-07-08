@@ -131,7 +131,7 @@ object ScreenForm: TScreenForm
         Align = alBottom
         Alignment = taCenter
         AutoSize = False
-        Caption = 'Ta impreza trwa ju¿'
+        Caption = 'This party lasts for'
         Color = clBlack
         Font.Charset = EASTEUROPE_CHARSET
         Font.Color = clGreen
@@ -178,7 +178,7 @@ object ScreenForm: TScreenForm
         Align = alBottom
         Alignment = taCenter
         AutoSize = False
-        Caption = 'Do pó³nocy pozosta³o'
+        Caption = 'Till midnight we have'
         Color = clBlack
         Font.Charset = EASTEUROPE_CHARSET
         Font.Color = clGreen

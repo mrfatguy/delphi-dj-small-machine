@@ -255,12 +255,12 @@ var
 begin
         if ListView.Items.Count=0 then
         begin
-                Application.MessageBox('Lista jest pusta! Nie zapisano ¿adnych plików...','Ostrze¿enie!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
+                Application.MessageBox('List is empty! No songs saved...','Warning!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
                 exit;
         end;
         if ListView.Items.Count>1000 then
         begin
-                Application.MessageBox('Ta wersja programu nie obs³uguje projektów wiêkszych ni¿ 1000 utworów! Zapisz projekt jako listê...','Ostrze¿enie!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
+                Application.MessageBox('This version does not support projects larger than 1000 songs. Write it as simple playlist instead...','Warning!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
                 exit;
         end;
         Screen.Cursor:=crHourglass;
@@ -273,7 +273,7 @@ begin
                         for a:=0 to ListView.Items.Count-1 do SaveFile.Add(ListView.Items[a].SubItems[2]);
                         SaveFile.SaveToFile(SaveDialog.FileName);
                         SaveFile.Free;
-                        StatusBar.Panels[0].Text:='Lista utworów zosta³a zapisana do pliku.';
+                        StatusBar.Panels[0].Text:='Playlist saved to file.';
                         TickCount:=0;
                 end;
                 if ExtractFileExt(SaveDialog.FileName)='.smp' then
@@ -291,7 +291,7 @@ begin
                         TempList.Values['ItemCount']:=IntToStr(mcount);
                         TempList.SaveToFile(SaveDialog.FileName);
                         TempList.Free;
-                        StatusBar.Panels[0].Text:='Projekt zosta³ zapisany do pliku.';
+                        StatusBar.Panels[0].Text:='Project saved to file.';
                         TickCount:=0;
                 end;
         end;
@@ -302,13 +302,13 @@ end;
 
 procedure TMainForm.btnNewClick(Sender: TObject);
 begin
-        if Application.MessageBox('Czy napewno utworzyæ now¹, pust¹ listê? Wszystkie niezapisane zmiany zostan¹ bezpowrotnie utracone!','Question',MB_YESNO+MB_ICONQUESTION+MB_DEFBUTTON2)=ID_YES then
+        if Application.MessageBox('Are you sure, you want to create a new list? All not saved changes will be lost!','Question',MB_YESNO+MB_ICONQUESTION+MB_DEFBUTTON2)=ID_YES then
         begin
                 Files.Clear;
                 RefreshFileList;
                 Application.Title:='DJ''s Small Machine ME';
                 MainForm.Caption:='DJ''s Small Machine ME';
-                StatusBar.Panels[0].Text:='Utworzono now¹ listê.';
+                StatusBar.Panels[0].Text:='New list created.';
                 TickCount:=0;
         end;
 end;
@@ -335,14 +335,14 @@ begin
                 if mcount=0 then
                 begin
                         Screen.Cursor:=crDefault;
-                        Application.MessageBox('Otwierana lista jest pusta! Nie dodano ¿adnych utworów...','Ostrze¿enie!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
+                        Application.MessageBox('Opened list is empty. No new songs added...','Warning!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
                         exit;
                 end;
                 RefreshFileList;
                 lcount:=ListView.Items.Count;
                 for a:=0 to lcount do Comments.Add('');
-                if mcount<>lcount then adder:=', nie odnaleziono plików: '+IntToStr(mcount-lcount) else adder:='';
-                StatusBar.Panels[0].Text:='Liczba utworów dodanych do listy: '+IntToStr(lcount)+' z '+IntToStr(mcount)+adder+'.';
+                if mcount<>lcount then adder:='. '+IntToStr(mcount-lcount)+' were not found' else adder:='';
+                StatusBar.Panels[0].Text:=''+IntToStr(lcount)+' songs out of '+IntToStr(mcount)' total songs added to list'+adder+'.';
                 TickCount:=0;
         end;
         if ExtractFileExt(nam)='.smp' then
@@ -357,14 +357,14 @@ begin
                 if mcount=0 then
                 begin
                         TempList.Free;
-                        Application.MessageBox('Otwierany projekt jest pusty! Nie dodano ¿adnych utworów...','Ostrze¿enie!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
+                        Application.MessageBox('Opened project is empty. No new songs added...','Warning!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
                         Screen.Cursor:=crDefault;
                         exit;
                 end;
                 if mcount>1000 then
                 begin
                         TempList.Free;
-                        Application.MessageBox('Ta wersja programu nie obs³uguje projektów wiêkszych ni¿ 1000 utworów...','Ostrze¿enie!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
+                        Application.MessageBox('This version of program does not support projects larger than 1000 songs...','Warning!',MB_OK+MB_ICONWARNING+MB_DEFBUTTON1);
                         Screen.Cursor:=crDefault;
                         exit;
                 end;
@@ -376,8 +376,8 @@ begin
                 end;
                 RefreshFileList;
                 lcount:=ListView.Items.Count;
-                if mcount<>lcount then adder:=', nie odnaleziono plików: '+IntToStr(mcount-lcount) else adder:='';
-                StatusBar.Panels[0].Text:='Liczba utworów dodanych do listy: '+IntToStr(lcount)+' z '+IntToStr(mcount)+adder+'.';
+                if mcount<>lcount then adder:='. '+IntToStr(mcount-lcount)+' were not found' else adder:='';
+                StatusBar.Panels[0].Text:=''+IntToStr(lcount)+' songs out of '+IntToStr(mcount)' total songs added to list'+adder+'.';
                 TickCount:=0;
                 TempList.Free;
         end;
@@ -397,7 +397,7 @@ var
 begin
         if ListView.Items.Count=0 then
         begin
-                Application.MessageBox('Nie mo¿na ustawiæ / modyfikowaæ przystanku czasowego, jeœli lista utworów jest pusta.','Information',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
+                Application.MessageBox('You can not set or modify passage point, when list of songs is empty.','Information',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
                 exit;
         end;
         if ListView.Selected=nil then
@@ -422,7 +422,7 @@ begin
         end
         else ListView.Selected.SubItems[1]:=IntToStr(MarkerForm.eValue.Value);
 
-        StatusBar.Panels[0].Text:='Przystanek czasowy zosta³ zmodyfikowany.';
+        StatusBar.Panels[0].Text:='Passage point set.';
         TickCount:=0;
 end;
 
@@ -531,7 +531,7 @@ var
 begin
         if ListView.Items.Count<2 then
         begin
-                Application.MessageBox('Nie mo¿na przejœæ do trybu Auto, jeœli lista zawiera mniej ni¿ dwie pozycje.','Information',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
+                Application.MessageBox('Can not start Auto-mode, if list has less than two songs.','Information',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
                 btnAutoMode.Down:=False;
                 exit;
         end;
@@ -572,8 +572,8 @@ begin
                 btnRandomize.Enabled:=False;
                 //ListView.Enabled:=False;
 
-                btnAutoMode.Hint:='Wy³¹cz tryb Auto';
-                StatusBar.Panels[0].Text:='Tryb automatyczny w³¹czony.';
+                btnAutoMode.Hint:='Turn off Auto-mode';
+                StatusBar.Panels[0].Text:='Auto-mode turned on.';
                 StatusBar.Panels[1].Text:='Auto';
                 TickCount:=0;
 
@@ -587,7 +587,7 @@ begin
         end
         else
         begin
-                if Application.MessageBox('Wszystkie aktualnie odtwarzane utwory zostan¹ zatrzymane.'+chr(13)+'Czy napewno opuœciæ tryb Auto?','Pytanie...',MB_YESNO+MB_ICONQUESTION+MB_DEFBUTTON2)=ID_NO then
+                if Application.MessageBox('All currently playing songs will be stopped.'+chr(13)+'Are you sure, you want to end Auto-mode?','Question...',MB_YESNO+MB_ICONQUESTION+MB_DEFBUTTON2)=ID_NO then
                 begin
                         btnAutoMode.Down:=True;
                         AutoModeIsOn:=True;
@@ -614,9 +614,9 @@ begin
                 XP2.Stop;
                 XP2.InputClose;
 
-                btnAutoMode.Hint:='W³¹cz tryb Auto';
-                StatusBar.Panels[0].Text:='Tryb automatyczny wy³¹czony.';
-                StatusBar.Panels[1].Text:='Rêczny';
+                btnAutoMode.Hint:='Turn Auto-mode on';
+                StatusBar.Panels[0].Text:='Auto-mode turned off.';
+                StatusBar.Panels[1].Text:='Manual';
                 TickCount:=0;
         end;
 end;
@@ -643,14 +643,14 @@ begin
 
         if AutoModeSettingsForm.rgMidnightClockMode.ItemIndex=0 then
         begin
-                MidnightTextBefore:='Do pó³nocy pozosta³o';
-                MidnightTextAfter:='Od pó³nocy minê³o';
+                MidnightTextBefore:='Until midnight';
+                MidnightTextAfter:='After midnight';
         end
         else
         begin
                 DecodeDate(Now, Year, Month, Day);
-                MidnightTextBefore:='Do koñca '+IntToStr(Year)+' roku pozosta³o';
-                MidnightTextAfter:='Mamy '+IntToStr(Year)+' rok od';
+                MidnightTextBefore:='Until end of '+IntToStr(Year)+' year';
+                MidnightTextAfter:='We have year '+IntToStr(Year)+' for';
         end;
 
         DecodeTime(Now, Hour, Min, Sec, MSec);
@@ -678,10 +678,10 @@ procedure TMainForm.FormShow(Sender: TObject);
 begin
         LoadSettings();
 
-        StatusBar.Panels[0].Text:='Witaj w programie!';
-        StatusBar.Panels[1].Text:='Rêczny';
-        StatusBar.Panels[2].Text:='Utworów: 0';
-        StatusBar.Panels[3].Text:='Czas trwania: 00:00:00';
+        StatusBar.Panels[0].Text:='Howdy!';
+        StatusBar.Panels[1].Text:='Manual';
+        StatusBar.Panels[2].Text:='Somgs: 0';
+        StatusBar.Panels[3].Text:='Time: 00:00:00';
 
         TickCount:=0;
         ProgramStart:=0;
@@ -691,7 +691,7 @@ procedure TMainForm.btnPlayClick(Sender: TObject);
 begin
         if ListView.Selected=nil then
         begin
-                Application.MessageBox('Najpierw wybierz na liœcie plik, który chcesz odtwarzaæ.','Informacja...',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
+                Application.MessageBox('Select file you want to play.','Information...',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
                 exit;
         end;
 
@@ -815,11 +815,11 @@ begin
         begin
                 dp1.Position := 0;
 
-                if XP1_State=XA_PLAYER_STATE_STOPPED then MainForm.pnlVolText.Caption:='Cisza...';
+                if XP1_State=XA_PLAYER_STATE_STOPPED then MainForm.pnlVolText.Caption:='Stopped';
         end;
         if XP1_State=XA_PLAYER_STATE_PLAYING then
         begin
-                MainForm.pnlVolText.Caption:='Granie...';
+                MainForm.pnlVolText.Caption:='Playing';
                 pnlSongNumber.Caption:=IntToStr(CurrentSong+1);
         end;
 end;
@@ -832,11 +832,11 @@ begin
         if XP2_State=XA_PLAYER_STATE_STOPPED then
         begin
                 dp2.Position := 0;
-                if XP2_State=XA_PLAYER_STATE_STOPPED then MainForm.pnlVolText.Caption:='Cisza...';
+                if XP2_State=XA_PLAYER_STATE_STOPPED then MainForm.pnlVolText.Caption:='Stopped';
         end;
         if XP2_State=XA_PLAYER_STATE_PLAYING then
         begin
-                MainForm.pnlVolText.Caption:='Granie...';
+                MainForm.pnlVolText.Caption:='Playing';
                 pnlSongNumber.Caption:=IntToStr(CurrentSong+1);
         end;
 end;
@@ -863,10 +863,10 @@ var
 begin
         if ListView.Items.Count<2 then
         begin
-                Application.MessageBox('Nie mo¿na przeprowadziæ sortowania losowego, jeœli lista zawiera mniej ni¿ dwie pozycje.','Information',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
+                Application.MessageBox('Can not sort list randomly, if it has less than two items','Information',MB_OK+MB_ICONINFORMATION+MB_DEFBUTTON2);
                 exit;
         end;
-        num:=StrToIntDef(MyInputDialog('Podaj iloœæ iteracji...','Im wiêcej iteracji, tym d³u¿szy proces sortowania, ale tak¿e wiêkszy rozrzut losowy utworów.','1000',False),0);
+        num:=StrToIntDef(MyInputDialog('Number of iterations','The more iterations, the longer process, but better songs spread','1000',False),0);
         if num=0 then exit;
         Screen.Cursor:=crHourglass;
         Randomize;

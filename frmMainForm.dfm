@@ -55,8 +55,7 @@ object MainForm: TMainForm
       Top = 3
       Width = 62
       Height = 50
-      Hint = 'Otw'#243'rz#Otwiera istniej'#261'c'#261' list'#281' odtwarzania'
-      Caption = 'Otw'#243'rz'
+      Caption = 'Open'
       Flat = True
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
@@ -180,8 +179,7 @@ object MainForm: TMainForm
       Top = 3
       Width = 62
       Height = 50
-      Hint = 'Zapisz#Zapisuje bie'#380#261'c'#261' list'#281' odtwarzania'
-      Caption = 'Zapisz'
+      Caption = 'Save'
       Flat = True
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
@@ -305,8 +303,7 @@ object MainForm: TMainForm
       Top = 3
       Width = 62
       Height = 50
-      Hint = 'Nowa#Tworzy now'#261' list'#281' odtwarzania'
-      Caption = 'Nowa'
+      Caption = 'New'
       Flat = True
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
@@ -431,9 +428,9 @@ object MainForm: TMainForm
       Width = 62
       Height = 50
       Hint = 
-        'Punkt przej'#347'cia#Ustala moment (w sekundach, od ko'#324'ca utworu) w k' +
-        't'#243'rym nast'#261'pi przej'#347'cie do nast'#281'pnego utworu'
-      Caption = 'Punkt...'
+        'Sets passage point, at which current song will be slowly silenced and next' +
+        ' song will auto-start to play'
+      Caption = 'Point'
       Flat = True
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -502,10 +499,9 @@ object MainForm: TMainForm
       Top = 3
       Width = 62
       Height = 50
-      Hint = 'O programie#Wy'#347'wietla informacje o programie'
       AllowAllUp = True
       Anchors = [akTop, akRight]
-      Caption = 'O...'
+      Caption = 'About...'
       Flat = True
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -574,12 +570,9 @@ object MainForm: TMainForm
       Top = 3
       Width = 62
       Height = 50
-      Hint = 
-        'Tryb Auto#W'#322#261'cza lub wy'#322#261'cza tryb automatycznego odtwarzania ca'#322 +
-        'ej listy utwor'#243'w'
       AllowAllUp = True
       GroupIndex = 1
-      Caption = 'Tryb Auto'
+      Caption = 'Auto-mode'
       Flat = True
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -648,10 +641,7 @@ object MainForm: TMainForm
       Top = 3
       Width = 62
       Height = 50
-      Hint = 
-        'Wygaszacz#W'#322#261'cza wbudowany wygaszacz ekranu (dzia'#322'a tylko w tryb' +
-        'ie Auto)'
-      Caption = 'Wygaszacz'
+      Caption = 'Screen-saver'
       Enabled = False
       Flat = True
       Glyph.Data = {
@@ -785,7 +775,7 @@ object MainForm: TMainForm
       Top = 3
       Width = 22
       Height = 22
-      Hint = 'Dodaj#Dodaje nowy utw'#243'r do listy (Insert)'
+      Hint = 'Adds new song to the list (Insert)'
       Flat = True
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -810,7 +800,7 @@ object MainForm: TMainForm
       Top = 27
       Width = 22
       Height = 22
-      Hint = 'Usu'#324'#Usuwa zaznaczony utw'#243'r (Delete)'
+      Hint = 'Removes currently selected song (Delete)'
       Flat = True
       Glyph.Data = {
         36060000424D3606000000000000360000002800000020000000100000000100
@@ -873,9 +863,7 @@ object MainForm: TMainForm
       Top = 59
       Width = 22
       Height = 22
-      Hint = 
-        'Przesu'#324' w g'#243'r'#281'#Przesuwa zaznaczony utw'#243'r w g'#243'r'#281' na li'#347'cie odtwar' +
-        'zania'
+      Hint = 'Moves selected song up in the list'
       Flat = True
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -900,9 +888,7 @@ object MainForm: TMainForm
       Top = 83
       Width = 22
       Height = 22
-      Hint = 
-        'Przesu'#324' w d'#243#322'#Przesuwa zaznaczony utw'#243'r w d'#243#322' na li'#347'cie odtwarza' +
-        'nia'
+      Hint = 'Moves selected song down on the list'
       Flat = True
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -927,9 +913,7 @@ object MainForm: TMainForm
       Top = 171
       Width = 22
       Height = 22
-      Hint = 
-        'Odswie'#380'#Od'#347'wie'#380'a zawarto'#347#263' listy - sprawdza poprawno'#347#263' wszystkic' +
-        'h pozycji (F5)'
+      Hint = 'Refreshes list (F5)'
       Flat = True
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -954,7 +938,7 @@ object MainForm: TMainForm
       Top = 203
       Width = 22
       Height = 22
-      Hint = 'Sortuj#Uk'#322'ada wszystkie pozycje wed'#322'ug losowego porz'#261'dku (F12)'
+      Hint = 'Sorts randomly all items on the list (F12)'
       Flat = True
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -979,7 +963,7 @@ object MainForm: TMainForm
       Top = 112
       Width = 23
       Height = 22
-      Hint = 'Przenie'#347'#Przenoszenie zaznaczonego utworu w zadane miejsce'
+      Hint = 'Moves current song to a give position'
       Enabled = False
       Flat = True
       Glyph.Data = {
@@ -1018,23 +1002,23 @@ object MainForm: TMainForm
       BorderStyle = bsNone
       Columns = <
         item
-          Caption = 'L.p.'
+          Caption = 'No.'
         end
         item
-          Caption = 'Utw'#243'r muzyczny'
+          Caption = 'Song'
           Width = 266
         end
         item
-          Caption = 'Punkt'
+          Caption = 'Point'
           Width = 40
         end
         item
-          Caption = 'Plik'
+          Caption = 'File'
           Width = 240
         end
         item
           Alignment = taCenter
-          Caption = 'D'#322'ugo'#347#263
+          Caption = 'Length'
           Width = 70
         end>
       ColumnClick = False
@@ -1058,7 +1042,7 @@ object MainForm: TMainForm
         Top = 8
         Width = 114
         Height = 13
-        Caption = 'Trwa sortowanie listy...'
+        Caption = 'Sorting the list...'
       end
       object dpSort: TProgressBar
         Left = 8
@@ -1088,7 +1072,7 @@ object MainForm: TMainForm
       Width = 90
       Height = 17
       Anchors = [akTop, akRight]
-      Caption = 'Cisza...'
+      Caption = 'Silence...'
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -1121,7 +1105,7 @@ object MainForm: TMainForm
       Width = 45
       Height = 17
       Anchors = [akTop, akRight]
-      Caption = 'Stan:'
+      Caption = 'State:'
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -1137,7 +1121,7 @@ object MainForm: TMainForm
       Top = 6
       Width = 80
       Height = 17
-      Caption = 'Aktualny utw'#243'r:'
+      Caption = 'Current song'
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -1210,7 +1194,6 @@ object MainForm: TMainForm
       Top = 1
       Width = 75
       Height = 20
-      Hint = 'Odtw'#243'rz#Odtwarza wybrany plik'
       Caption = 'Start'
       Flat = True
       Font.Charset = EASTEUROPE_CHARSET
@@ -1235,10 +1218,9 @@ object MainForm: TMainForm
       Top = 1
       Width = 75
       Height = 20
-      Hint = 'Pauza#Wstrzymuje odtwarzanie wybranego pliku'
       AllowAllUp = True
       GroupIndex = 78
-      Caption = 'Pauza'
+      Caption = 'Pause'
       Flat = True
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
@@ -1262,7 +1244,6 @@ object MainForm: TMainForm
       Top = 1
       Width = 75
       Height = 20
-      Hint = 'Stop#Przerwa odtwarzanie wybranego pliku'
       Caption = 'Stop'
       Flat = True
       Font.Charset = EASTEUROPE_CHARSET
@@ -1287,9 +1268,8 @@ object MainForm: TMainForm
       Top = 1
       Width = 75
       Height = 20
-      Hint = 'Korektor#Otwiera okno graficznego korektora d'#378'wi'#281'ku'
       Anchors = [akTop, akRight]
-      Caption = 'Korektor'
+      Caption = 'Equaliser'
       Flat = True
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
@@ -1313,9 +1293,8 @@ object MainForm: TMainForm
       Top = 1
       Width = 75
       Height = 20
-      Hint = 'Ustawienia#Otwiera okno dodatkowych ustawie'#324' odtwarzania d'#378'wi'#281'ku'
       Anchors = [akTop, akRight]
-      Caption = 'Ustawienia'
+      Caption = 'Settings'
       Flat = True
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
@@ -1339,10 +1318,8 @@ object MainForm: TMainForm
       Top = 1
       Width = 75
       Height = 20
-      Hint = 
-        'Do ko'#324'ca...#Przeskok w pobli'#380'e ko'#324'ca utworu (dla testowania efek' +
-        'tu przej'#347'cia)'
-      Caption = 'Do ko'#324'ca...'
+      Hint = 'Moves current song forward toward song end (for testing of passage effect).'
+      Caption = 'Move to end'
       Flat = True
       Font.Charset = EASTEUROPE_CHARSET
       Font.Color = clWindowText
@@ -1368,19 +1345,19 @@ object MainForm: TMainForm
     Width = 176
     Height = 185
     Redockable = False
-    Caption = 'Ustawienia'
+    Caption = 'Settings'
     object rgDrawMode: TRadioGroup
       Left = 8
       Top = 4
       Width = 160
       Height = 85
-      Caption = ' Czas trwania utworu: '
+      Caption = ' Song length: '
       ItemIndex = 3
       Items.Strings = (
-        'nie pokazuj'
-        'pokazuj procenty'
-        'pokazuj ile up'#322'yn'#281#322'o'
-        'pokazuj ile pozosta'#322'o')
+        'nothing'
+        'display percentage'
+        'display what has passed'
+        'display what is left')
       TabOrder = 0
     end
     object rgDisplay: TRadioGroup
@@ -1388,13 +1365,13 @@ object MainForm: TMainForm
       Top = 92
       Width = 160
       Height = 85
-      Caption = ' Wy'#347'wietlanie tytu'#322'u utw'#243'ru: '
+      Caption = ' Song title: '
       ItemIndex = 2
       Items.Strings = (
-        'Wykonawca - Tytu'#322
-        'Wykonawca: "Tytu'#322'"'
-        '"Tytu'#322'" (Wykonawca)'
-        'Tytu'#322' by Wykonawca')
+        'Author - Title'
+        'Author: "Title"'
+        '"Title" (Author)'
+        'Title by Author')
       TabOrder = 1
       OnClick = rgDisplayClick
     end
@@ -1405,13 +1382,13 @@ object MainForm: TMainForm
     Width = 286
     Height = 177
     Redockable = False
-    Caption = 'Korektor'
+    Caption = 'Equaliser'
     object Label1: TLabel
       Left = 8
       Top = 160
       Width = 263
       Height = 13
-      Caption = 'EQ reaguje z 1-2 sekundowym op'#243#378'nieniem na zmiany.'
+      Caption = 'Allow 1-2 seconds delay for each EQ change to be heard.'
     end
     object Label3: TLabel
       Left = 6
@@ -1687,7 +1664,7 @@ object MainForm: TMainForm
       Top = 5
       Width = 67
       Height = 17
-      Caption = 'Uaktywnij'
+      Caption = 'Activate'
       TabOrder = 0
       OnClick = TrackBarChange
     end
@@ -1696,7 +1673,7 @@ object MainForm: TMainForm
       Top = 5
       Width = 40
       Height = 17
-      Caption = 'Zeruj!'
+      Caption = 'Reset'
       TabOrder = 9
       OnClick = btnResetClick
     end
@@ -1846,22 +1823,22 @@ object MainForm: TMainForm
   end
   object AddSong: TOpenDialog
     DefaultExt = 'mp3'
-    Filter = 'Pliki MP3 (*.mp3)|*.mp3'
+    Filter = 'MP3 files (*.mp3)|*.mp3'
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing]
-    Title = 'Dodaj utw'#243'r...'
+    Title = 'Add song...'
     Left = 435
     Top = 24
   end
   object SaveDialog: TSaveDialog
     DefaultExt = '*.sml'
-    Filter = 'Listy utwor'#243'w (*.sml)|*.sml'
-    Title = 'Zapisz...'
+    Filter = 'Playlists (*.sml)|*.sml'
+    Title = 'Save...'
     Left = 464
   end
   object OpenDialog: TOpenDialog
-    Filter = 'Listy utwor'#243'w (*.sml)|*.sml'
+    Filter = 'Playlists (*.sml)|*.sml'
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
-    Title = 'Otw'#243'rz...'
+    Title = 'Open...'
     Left = 435
   end
   object XP1: TXaudioPlayer

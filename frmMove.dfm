@@ -3,7 +3,7 @@ object MoveForm: TMoveForm
   Top = 104
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Przenie'#347' utw'#243'r'
+  Caption = 'Move song'
   ClientHeight = 196
   ClientWidth = 241
   Color = clBtnFace
@@ -21,7 +21,7 @@ object MoveForm: TMoveForm
     Top = 8
     Width = 79
     Height = 13
-    Caption = 'Wybrany utw'#243'r:'
+    Caption = 'Selected song:'
   end
   object lblSongNum: TLabel
     Left = 96
@@ -41,7 +41,7 @@ object MoveForm: TMoveForm
     Top = 124
     Width = 89
     Height = 13
-    Caption = 'Pozycja docelowa:'
+    Caption = 'Target position:'
   end
   object gbMove: TRadioGroup
     Left = 8
@@ -51,10 +51,10 @@ object MoveForm: TMoveForm
     Caption = ' Metoda przenoszenia utworu '
     ItemIndex = 2
     Items.Strings = (
-      'Przenie'#347' do g'#243'ry o jeden'
-      'Przenie'#347' w d'#243#322' o jeden'
-      'Przenie'#347' na pozycj'#281'...'
-      'Wymie'#324' z pozycj'#261'...')
+      'Move up one position'
+      'Move down one position'
+      'Move to given position'
+      'Replace with given position')
     TabOrder = 0
     OnClick = gbMoveClick
   end
@@ -63,7 +63,7 @@ object MoveForm: TMoveForm
     Top = 158
     Width = 100
     Height = 30
-    Caption = 'Uruchom'
+    Caption = 'Start'
     Default = True
     Font.Charset = EASTEUROPE_CHARSET
     Font.Color = clWindowText
@@ -137,7 +137,7 @@ object MoveForm: TMoveForm
     Width = 100
     Height = 30
     Cancel = True
-    Caption = 'Anuluj'
+    Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 1
     Glyph.Data = {
